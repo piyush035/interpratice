@@ -3,7 +3,7 @@ package interviewbit.arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution {
+public class SpiralOrderMatrix {
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<Integer>();
 
