@@ -11,6 +11,6 @@ public class Solution {
 
     // DO NOT MODIFY THE LIST. IT IS READ ONLY
     public ArrayList<Integer> spiralOrder(final List<ArrayList<Integer>> A) {
-
+    return null;
     }
 }
