@@ -24,26 +24,26 @@ public class MaxSumContiguousSubarray {
     }
 
     public int maxSubArray(final List<Integer> A) {
-        Integer maxSum = null;
-        List<Integer> tempArry = new ArrayList<>();
         int size = A.size();
-        for(int i =0 ; i<A.size();i++){
-            int number = A.get(i);
-            tempArry.add(number);
-            if (maxSum == null || maxSum < number) {
-                maxSum = number;
-            }
+        if(A.size() == 1)
+            return A.get(0);
+        return maxSubArray(A,size);
+    }
+    private int maxSubArray(final List<Integer> A, int size) {
+        int m = size/2;
+        int leftMSS = maxSubArray(A, m);
+        int rightMSS = maxSubArray(A, size-m);
+        int leftSum = Integer.MIN_VALUE, rightSum = Integer.MIN_VALUE, sum = 0;
+        for(int i = m; i<size;i++){
+            sum += A.get(i);
+            rightSum = Math.max(rightSum,sum);
         }
-        for (int i = 1; i < size; i++) {
-            int j = 0;
-            for (;  i + j < size; j++) {
-                int number = tempArry.get(j) + A.get(i + j);
-                tempArry.set(j,number);
-                if (maxSum < number) {
-                    maxSum = number;
-                }
-            }
+        sum = 0;
+        for (int i = (m-1); i >= 0 ; i--){
+            sum += A.get(i);
+            leftSum = Math.max(leftSum,sum);
         }
-        return maxSum;
+        int ans = Math.max(leftMSS,rightMSS);
+        return Math.max(ans, leftSum+rightSum);
     }
 }
