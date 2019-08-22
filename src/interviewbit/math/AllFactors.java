@@ -1,4 +1,4 @@
-package interviewbit.arrays;
+package interviewbit.math;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
