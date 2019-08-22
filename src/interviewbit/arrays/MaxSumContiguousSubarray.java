@@ -30,20 +30,14 @@ public class MaxSumContiguousSubarray {
         return maxSubArray(A,size);
     }
     private int maxSubArray(final List<Integer> A, int size) {
-        int m = size/2;
-        int leftMSS = maxSubArray(A, m);
-        int rightMSS = maxSubArray(A, size-m);
-        int leftSum = Integer.MIN_VALUE, rightSum = Integer.MIN_VALUE, sum = 0;
-        for(int i = m; i<size;i++){
-            sum += A.get(i);
-            rightSum = Math.max(rightSum,sum);
+        int max_so_far =  A.get(0);
+        int curr_max = A.get(0);
+
+        for (int i = 1; i < size; i++)
+        {
+            curr_max = Math.max(A.get(i), curr_max+A.get(i));
+            max_so_far = Math.max(max_so_far, curr_max);
         }
-        sum = 0;
-        for (int i = (m-1); i >= 0 ; i--){
-            sum += A.get(i);
-            leftSum = Math.max(leftSum,sum);
-        }
-        int ans = Math.max(leftMSS,rightMSS);
-        return Math.max(ans, leftSum+rightSum);
+        return max_so_far;
     }
 }
