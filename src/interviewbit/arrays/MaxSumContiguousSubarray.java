@@ -25,17 +25,17 @@ public class MaxSumContiguousSubarray {
 
     public int maxSubArray(final List<Integer> A) {
         int size = A.size();
-        if(A.size() == 1)
+        if (A.size() == 1)
             return A.get(0);
-        return maxSubArray(A,size);
+        return maxSubArray(A, size);
     }
+
     private int maxSubArray(final List<Integer> A, int size) {
-        int max_so_far =  A.get(0);
+        int max_so_far = A.get(0);
         int curr_max = A.get(0);
 
-        for (int i = 1; i < size; i++)
-        {
-            curr_max = Math.max(A.get(i), curr_max+A.get(i));
+        for (int i = 1; i < size; i++) {
+            curr_max = Math.max(A.get(i), curr_max + A.get(i));
             max_so_far = Math.max(max_so_far, curr_max);
         }
         return max_so_far;
