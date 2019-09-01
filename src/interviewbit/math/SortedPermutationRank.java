@@ -38,5 +38,4 @@ public class SortedPermutationRank {
         }
         return res % M;
     }
-
 }
