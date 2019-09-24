@@ -3,7 +3,7 @@ package interviewbit.arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class test {
+public class Lottery {
     public static void main(String[] args) {
         System.out.println(lotteryCoupons(22));
     }
