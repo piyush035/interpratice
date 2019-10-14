@@ -36,30 +36,5 @@ public class MaxNonNegativeSubArray {
             }
         }
         return maxArray;
-        /*ArrayList ans = new ArrayList<>();
-        int maxSoFar = 0, maxEndHere = 0;
-        int start = -1, end = -1, s = 0;
-        for (int i = 0; i < A.size(); i++) {
-            maxEndHere = maxEndHere + A.get(i);
-            if (A.get(i) < 0) {
-                maxEndHere = Integer.MIN_VALUE;
-            }
-            if (maxSoFar <= maxEndHere) {
-                maxSoFar = maxEndHere;
-                start = s;
-                end = i;
-            }
-            if (maxEndHere < 0) {
-                maxEndHere = 0;
-                s = i + 1;
-            }
-        }
-        //System.out.println("Result ::"+maxSoFar);
-        if (start >= 0 && end >= 0) {
-            for (int i = start; i <= end; i++) {
-                ans.add(A.get(i));
-            }
-        }*/
-        //return ans;
     }
 }
