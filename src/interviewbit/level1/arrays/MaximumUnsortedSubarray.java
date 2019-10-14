@@ -1,4 +1,4 @@
-package interviewbit.arrays;
+package interviewbit.level1.arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;
