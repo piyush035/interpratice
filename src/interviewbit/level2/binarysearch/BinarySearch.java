@@ -2,9 +2,10 @@ package interviewbit.level2.binarysearch;
 
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] arr = new int[]{1,3,5,7,11,13,15,17,19};
-        System.out.println("Result :: "+binarySearch(arr,3));
+        int[] arr = new int[]{1, 3, 5, 7, 11, 13, 15, 17, 19};
+        System.out.println("Result :: " + binarySearch(arr, 17));
     }
+
     /**
      * Return the index of element if available otherwise -1
      *
@@ -18,7 +19,7 @@ public class BinarySearch {
             mid = (start + end) / 2;
             if (arr[mid] == target) {
                 return mid;
-            } else if (arr[mid] < target) {
+            } else if (arr[mid] > target) {
                 end = mid - 1;
             } else {
                 start = mid + 1;
