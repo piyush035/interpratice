@@ -2,10 +2,11 @@ package interviewbit.level2.string;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Stringoholics {
+    final int M = (int) 1e9 + 7;
+
     public static void main(String[] args) {
         ArrayList<String> list = new ArrayList<>();
         list.add("a");
@@ -14,97 +15,87 @@ public class Stringoholics {
         System.out.println("Stringoholics :: " + new Stringoholics().solve(list));
     }
 
-    final int M = (int) 1e9+7;
-
-    int maxLenSubString(String t){
+    int maxLenSubString(String t) {
+        int n = t.length(), len = 0, i = 0, max = 0;
         int[] lps = new int[t.length()];
         lps[0] = 0;
-        int len = 0;
-        int n = t.length();
-        int i =1;
-        int max= 0;
-
-        while(i<n){
-            if(t.charAt(i) == t.charAt(len)){
+        while (i < n) {
+            if (t.charAt(i) == t.charAt(len)) {
                 len++;
                 lps[i] = len;
                 i++;
-                max = Math.max(max,len);
-            }
-            else{
-                if(len == 0){
+                max = Math.max(max, len);
+            } else {
+                if (len == 0) {
                     lps[i] = 0;
                     i++;
-                }
-                else{
-                    len = lps[len-1];
+                } else {
+                    len = lps[len - 1];
                 }
             }
         }
-
         return max;
     }
 
-    long pow(long a, long p){
+    long pow(long a, long p) {
 
         long ans = 1;
-        while(p>0){
-            if(p%2L == 1L){
-                ans = (ans * a)%M;
+        while (p > 0) {
+            if (p % 2L == 1L) {
+                ans = (ans * a) % M;
             }
-            a = (a*a)%M;
+            a = (a * a) % M;
             p /= 2;
         }
 
-        return ans%M;
+        return ans % M;
     }
 
-    void updateLcmMap(Map<Integer, Integer> m, Integer num){
+    void updateLcmMap(Map<Integer, Integer> m, Integer num) {
 
         int i = 2;
 
-        while(i<=num && i > 1){
+        while (i <= num && i > 1) {
             int count = 0;
 
-            while(num % i == 0){
+            while (num % i == 0) {
                 count++;
                 num /= i;
             }
 
-            if(count == 0){
+            if (count == 0) {
                 i++;
                 continue;
             }
 
-            if(m.containsKey(i)){
+            if (m.containsKey(i)) {
                 int v = m.get(i);
-                if(v < count){
-                    m.put(i,count);
+                if (v < count) {
+                    m.put(i, count);
                 }
-            }
-            else{
-                m.put(i,count);
+            } else {
+                m.put(i, count);
             }
 
             i++;
         }
     }
 
-    long getLcm(ArrayList<Integer> lens){
+    long getLcm(ArrayList<Integer> lens) {
 
         Map<Integer, Integer> m = new HashMap<>();
 
-        for(Integer num : lens){
+        for (Integer num : lens) {
             updateLcmMap(m, num);
         }
 
         long prod = 1;
-        for(Map.Entry<Integer, Integer> entry : m.entrySet()){
+        for (Map.Entry<Integer, Integer> entry : m.entrySet()) {
 
             int k = entry.getKey();
             int v = entry.getValue();
 
-            long p = pow(k,v) % M;
+            long p = pow(k, v) % M;
 
             prod = (prod * p) % M;
         }
@@ -116,26 +107,26 @@ public class Stringoholics {
 
         ArrayList<Integer> lens = new ArrayList<>();
 
-        for(String t: A){
+        for (String t : A) {
             int maxLen = maxLenSubString(t);
             int n = t.length();
 
-            if(n%(n-maxLen) == 0){
+            if (n % (n - maxLen) == 0) {
                 n -= maxLen;
             }
 
             long sum = 0;
-            int i =1;
-            do{
+            int i = 1;
+            do {
                 sum += i;
                 i++;
-            }while(sum % ((long) n) != 0L);
+            } while (sum % ((long) n) != 0L);
 
-            lens.add(i-1);
+            lens.add(i - 1);
         }
 
         long lcm = getLcm(lens) % M;
 
-        return (int)lcm % M;
+        return (int) lcm % M;
     }
 }
