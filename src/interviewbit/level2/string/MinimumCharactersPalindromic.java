@@ -2,7 +2,7 @@ package interviewbit.level2.string;
 
 public class MinimumCharactersPalindromic {
     public static void main(String[] args) {
-        System.out.println("MinimumCharactersPalindromic :: " + new MinimumCharactersPalindromic().solve("ABC"));
+        System.out.println("MinimumCharactersPalindromic :: " + new MinimumCharactersPalindromic().solve("AACFGFECA"));
     }
 
     public int solve(String A) {
