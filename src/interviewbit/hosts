@@ -1,0 +1,64 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+127.0.0.1 rochedia.d3.sc.omtrdc.net
+54.229.130.115		diagnostics.roche.com
+54.229.130.115		dialog.roche.com
+54.229.130.115		hpvactnow.com
+54.229.130.115		hpvactnow.com.vn
+54.229.130.115		hpvactnow.vn
+54.229.130.115		hpvactnow.in.th
+54.229.130.115		biotinfacts.roche.com
+54.229.130.115		campaigns.roche.com
+54.229.130.115		e-labdoc.roche.com
+54.229.130.115		elabdoc.roche.com
+54.229.130.115		cobas-roche.co.uk
+54.229.130.115		cssportal.roche.com
+54.229.130.115		dialog.roche-diagnostics.cz
+54.229.130.115		documentation.roche.com
+54.229.130.115		preview-owp.roche.com
+54.229.130.115		author-eu-prod.roche.com
+54.229.130.115		author-roche-eu-prod.adobecqms.net
+54.229.130.115		supportrequest.roche.com
+54.229.130.115		insights-test.roche.com
+54.229.130.115		ungthuctc.com.vn
+54.229.130.115		showpad.roche.com
+54.229.130.115		www.diagnostics.roche.com
+54.229.130.115		www.dialog.roche.com
+54.229.130.115		www.hpvactnow.com
+54.229.130.115		www.hpvactnow.com.vn
+54.229.130.115		www.hpvactnow.vn
+54.229.130.115		www.hpvactnow.in.th
+54.229.130.115		www.biotinfacts.roche.com
+54.229.130.115		www.campaigns.roche.com
+54.229.130.115		www.e-labdoc.roche.com
+54.229.130.115		www.elabdoc.roche.com
+54.229.130.115		www.cobas-roche.co.uk
+54.229.130.115		www.cssportal.roche.com
+54.229.130.115		www.dialog.roche-diagnostics.cz
+54.229.130.115		www.documentation.roche.com
+54.229.130.115		www.preview-owp.roche.com
+54.229.130.115		www.author-eu-prod.roche.com
+54.229.130.115		www.author-roche-eu-prod.adobecqms.net
+54.229.130.115		www.supportrequest.roche.com
+54.229.130.115		www.insights-test.roche.com
+54.229.130.115		www.ungthuctc.com.vn
+54.229.130.115		https://dialog.roche.com
