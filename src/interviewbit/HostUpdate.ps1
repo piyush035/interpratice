@@ -50,7 +50,7 @@ function add-hosts() {
 	$c = Get-Content $alldomainsfile
 	
 	foreach ($line in $c) {
-        add-host $file $ip2 $line
+        add-host $file $ip1 $line
 	}
     update-ip
 }
@@ -58,18 +58,22 @@ function add-hosts() {
 
 function update-ip() {
 	Clear-Content $oldIPfile
-	$ip2 | Out-File -encoding ASCII -append $filename
+	$ip1 | Out-File -encoding ASCII -append $filename
     Copy-Item $file $etcHost
 }
 
 function verify-ip([string]$filename) {
 	$c = Get-Content $filename
-	
-	foreach ($line in $c) {
-		if ($line -ne $ip1 -AND $line -ne $ip2) {
-            add-hosts
-		}
-	}
+
+	if(-not [string]::IsNullOrEmpty($ip1)) {          
+	    foreach ($line in $c) {    
+
+		    if ($line -ne $ip1 -AND $line -ne $ip2) {
+                add-hosts
+                #Write-Host $ips
+		    }
+	    }
+    }
 }
 
 verify-ip $oldIPfile
